@@ -1,4 +1,4 @@
-import { sendRequest } from "./dataAccess"
+import { sendRequest } from "./dataAccess.js"
 
 export const ServiceForm = () => {
     let html = `
@@ -34,16 +34,18 @@ mainContainer.addEventListener("click", clickEvent => {
         const userAddress = document.querySelector("input[name='serviceAddress']").value
         const userBudget = document.querySelector("input[name='serviceBudget']").value
         const userDate = document.querySelector("input[name='serviceDate']").value
+    
+        // Make an object out of the user input
+        const dataToSendToAPI = {
+            description: userDescription,
+            address: userAddress,
+            budget: userBudget,
+            neededBy: userDate
+        }
+
+        // Send the data to the API for permanent storage
+        sendRequest(dataToSendToAPI)
+
     }
 
-    // Make an object out of the user input
-    const dataToSendToAPI = {
-        description: userDescription,
-        address: userAddress,
-        budget: userBudget,
-        neededBy: userDate
-    }
-
-    // Send the data to the API for permanent storage
-    sendRequest(dataToSendToAPI)
 })

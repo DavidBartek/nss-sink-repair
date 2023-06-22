@@ -1,3 +1,19 @@
+.header {
+    display: flex;
+    margin-bottom: 1em;
+}
+
+h1 {
+    margin-left: 2em;
+    align-self: end;
+}
+
+img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px
+}
+
 .serviceForm {
     display: flex;
     flex-direction: column;
@@ -7,6 +23,7 @@
     display: flex;
     flex-direction: column;
     max-width: 35%;
+    min-width: 500px;
     margin-bottom: 1em;
 }
 
@@ -21,4 +38,35 @@
     margin-bottom: 1em;
     color: white;
     background-color: #474ea0;
+}
+
+.serviceRequests__table {
+    border-collapse: collapse;
+    max-width: 35%;
+    min-width: 35%;
+}
+
+.serviceRequests__table td, .serviceRequests__table th {
+    padding: 8px;
+    border-bottom: 1px solid #6b7a88; 
+    border-top: 1px solid #6b7a88;
+}
+
+.serviceRequests__table th {
+    color: white;
+    background-color: #6b7a88;
+    text-align: left;
+}
+
+/* .serviceRequests__table tr:nth-child(even) {
+    background-color: #ebe9e9;
+} */
+
+.serviceRequests__table--completed {
+    background-color: #fbd4d2;
+}
+
+.request__delete {
+    color: white;
+    background-color: #a547dc;
 }
